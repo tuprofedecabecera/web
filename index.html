@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clases Particulares Online para Bachillerato, FP y Universidad | Tu Profe de Cabecera</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary-blue:#1e40af;
+      --secondary-blue:#3b82f6;
+      --accent-blue:#93c5fd;
+
+      --whatsapp-green:#25d366;
+      --whatsapp-dark:#128c7e;
+
+      --text-dark:#111827;
+      --text-muted:#4b5563;
+      --white:#ffffff;
+
+      --radius-full:9999px;
+      --radius-card:1.25rem;
+
+      --shadow-sm:0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md:0 10px 15px -3px rgb(0 0 0 / 0.10), 0 4px 6px -2px rgb(0 0 0 / 0.05);
+      --shadow-lg:0 20px 25px -5px rgb(0 0 0 / 0.10), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      color:var(--text-dark);
+      background:var(--white);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:9998;
+      background:rgba(255,255,255,.88);
+      backdrop-filter:saturate(180%) blur(10px);
+      border-bottom:1px solid #e2e8f0;
+    }
+
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:.65rem 0;
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      font-weight:900;
+      color:#0f172a;
+      letter-spacing:-.01em;
+      display:flex;
+      align-items:center;
+      gap:.6rem;
+      white-space:nowrap;
+    }
+
+    .brand-badge{
+      font-size:.78rem;
+      padding:.2rem .55rem;
+      border-radius:var(--radius-full);
+      background:#eff6ff;
+      border:1px solid rgba(30,64,175,.15);
+      color:var(--primary-blue);
+      font-weight:900;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:.55rem;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .nav-links a{
+      padding:.45rem .75rem;
+      border-radius:var(--radius-full);
+      border:1px solid #e2e8f0;
+      background:#fff;
+      font-weight:800;
+      color:#0f172a;
+      transition:transform .15s ease,border-color .15s ease;
+      font-size:.92rem;
+    }
+
+    .nav-links a:hover{
+      border-color:rgba(30,64,175,.35);
+      transform:translateY(-1px);
+    }
+
+    .hero{
+      padding:6.2rem 0 4.3rem;
+      background:radial-gradient(circle at top right,#dbeafe,#eff6ff 50%,#fff 100%);
+      text-align:center;
+    }
+
+    .hero h1{
+      font-size:clamp(2.2rem,5vw,3.5rem);
+      font-weight:900;
+      color:var(--primary-blue);
+      margin-bottom:.75rem;
+      line-height:1.1;
+      letter-spacing:-.02em;
+    }
+
+    .hero h2.subtitle{
+      font-size:clamp(1.15rem,3vw,1.6rem);
+      font-weight:800;
+      color:var(--secondary-blue);
+      margin-bottom:1.1rem;
+      opacity:.97;
+    }
+
+    .hero p.tagline{
+      font-size:1.08rem;
+      color:var(--text-muted);
+      max-width:920px;
+      margin:0 auto 1.3rem;
+    }
+
+    .hero-trust{
+      display:flex;
+      justify-content:center;
+      gap:.8rem;
+      flex-wrap:wrap;
+      margin:0 auto 1.8rem;
+    }
+
+    .hero-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:.45rem;
+      padding:.5rem .9rem;
+      border-radius:var(--radius-full);
+      background:rgba(255,255,255,.88);
+      border:1px solid rgba(30,64,175,.10);
+      box-shadow:var(--shadow-sm);
+      font-weight:800;
+      font-size:.92rem;
+      color:#0f172a;
+      white-space:nowrap;
+    }
+
+    .hero-pill svg{
+      width:18px;
+      height:18px;
+      color:var(--secondary-blue);
+      flex-shrink:0;
+    }
+
+    .btn-wa{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      background:linear-gradient(135deg,var(--whatsapp-green),var(--whatsapp-dark));
+      color:#fff;
+      padding:1.05rem 2.2rem;
+      border-radius:var(--radius-full);
+      font-weight:900;
+      font-size:1.1rem;
+      transition:transform .25s ease,box-shadow .25s ease,filter .25s ease;
+      box-shadow:0 12px 25px -10px rgba(37,211,102,.55);
+      border:1px solid rgba(255,255,255,.15);
+    }
+
+    .btn-wa svg{
+      width:22px;
+      height:22px;
+    }
+
+    .btn-wa:hover{
+      transform:translateY(-3px);
+      box-shadow:0 20px 35px -14px rgba(37,211,102,.6);
+      filter:brightness(1.05);
+    }
+
+    .micro-note{
+      margin-top:1rem;
+      font-size:.95rem;
+      color:var(--text-muted);
+    }
+
+    .authority{
+      background:#f8fafc;
+      padding:4.1rem 0;
+      border-top:1px solid #e2e8f0;
+      border-bottom:1px solid #e2e8f0;
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:2rem;
+      text-align:center;
+    }
+
+    .stat-number{
+      font-size:clamp(2.25rem,4.5vw,3.45rem);
+      font-weight:950;
+      color:var(--primary-blue);
+      line-height:1;
+      margin-bottom:.5rem;
+    }
+
+    .stat-text{
+      font-size:.95rem;
+      color:var(--text-muted);
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+    }
+
+    .micro-phrase{
+      text-align:center;
+      margin-top:2.4rem;
+      color:#0f172a;
+      font-weight:650;
+      font-size:1.05rem;
+      opacity:.95;
+      max-width:920px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .section-header{
+      text-align:center;
+      margin-bottom:3rem;
+    }
+
+    .section-header h2{
+      font-size:2.25rem;
+      color:var(--primary-blue);
+      font-weight:950;
+      margin-bottom:.75rem;
+      letter-spacing:-.01em;
+    }
+
+    .section-header p{
+      color:var(--text-muted);
+      font-size:1.05rem;
+      max-width:820px;
+      margin:0 auto;
+    }
+
+    .fit-section{
+      padding:5.5rem 0;
+      background:#fff;
+    }
+
+    .fit-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:1.2rem;
+    }
+
+    .fit-card{
+      background:#f8fafc;
+      border:1px solid #e2e8f0;
+      border-radius:var(--radius-card);
+      padding:1.45rem;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .fit-card strong{
+      display:block;
+      color:#0f172a;
+      font-weight:900;
+      margin-bottom:.35rem;
+      font-size:1rem;
+    }
+
+    .fit-card span{
+      color:var(--text-muted);
+      font-weight:650;
+      font-size:.96rem;
+    }
+
+    .pillars{
+      padding:6.2rem 0;
+      background:#fbfcfe;
+    }
+
+    .pillars-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:2rem;
+    }
+
+    .pillar-card{
+      background:#f8fafc;
+      padding:2.25rem;
+      border-radius:var(--radius-card);
+      border:1px solid #f1f5f9;
+      position:relative;
+      overflow:hidden;
+      transition:transform .22s ease,box-shadow .22s ease,background-color .22s ease;
+    }
+
+    .pillar-card::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:4px;
+      background:linear-gradient(90deg,var(--primary-blue),var(--secondary-blue));
+    }
+
+    .pillar-card:hover{
+      background:#fff;
+      box-shadow:var(--shadow-lg);
+      transform:translateY(-6px);
+    }
+
+    .pillar-card h3{
+      color:var(--primary-blue);
+      font-size:1.42rem;
+      font-weight:950;
+      margin-bottom:1.2rem;
+    }
+
+    .tag-container{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.65rem;
+    }
+
+    .tag{
+      background:#fff;
+      color:var(--text-muted);
+      padding:.5rem .9rem;
+      border-radius:var(--radius-full);
+      font-size:.86rem;
+      font-weight:850;
+      border:1px solid #e2e8f0;
+    }
+
+    .pillar-card:hover .tag{
+      border-color:var(--accent-blue);
+      color:var(--primary-blue);
+    }
+
+    .how-it-works{
+      background:#0f172a;
+      color:#fff;
+      padding:6.2rem 0;
+    }
+
+    .method-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.9rem;
+    }
+
+    .method-card{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.10);
+      padding:2.1rem;
+      border-radius:var(--radius-card);
+      transition:transform .2s ease,background .2s ease,border-color .2s ease;
+    }
+
+    .method-card:hover{
+      transform:translateY(-5px);
+      background:rgba(255,255,255,.06);
+      border-color:rgba(59,130,246,.5);
+    }
+
+    .method-icon{
+      width:48px;
+      height:48px;
+      background:var(--primary-blue);
+      border-radius:12px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:1rem;
+    }
+
+    .method-card h4{
+      font-size:1.15rem;
+      font-weight:950;
+      margin-bottom:.55rem;
+    }
+
+    .method-card p{
+      color:#cbd5e1;
+      font-weight:650;
+      line-height:1.55;
+    }
+
+    .video-section{
+      padding:6.2rem 0;
+      background:#fbfcfe;
+    }
+
+    .video-wrap{
+      max-width:980px;
+      margin:0 auto;
+      background:#fff;
+      border:1px solid #e2e8f0;
+      border-radius:var(--radius-card);
+      box-shadow:var(--shadow-md);
+      overflow:hidden;
+    }
+
+    .video-header{
+      padding:1.2rem 1.4rem;
+      border-bottom:1px solid #e2e8f0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+
+    .video-header strong{
+      color:#0f172a;
+      font-weight:950;
+    }
+
+    .video-frame{
+      position:relative;
+      width:100%;
+      padding-top:56.25%;
+      background:#0b1224;
+    }
+
+    .video-frame iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
+    .about{
+      padding:6.2rem 0;
+      background:#fff;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:2rem;
+      align-items:center;
+    }
+
+    .about-left{
+      display:grid;
+      grid-template-columns:170px 1fr;
+      gap:1.6rem;
+      align-items:center;
+    }
+
+    .about-photo{
+      width:170px;
+      height:170px;
+      border-radius:999px;
+      overflow:hidden;
+      background:#e5e7eb;
+      border:6px solid #ffffff;
+      box-shadow:var(--shadow-md);
+    }
+
+    .about-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .about-card{
+      background:#f8fafc;
+      border:1px solid #e2e8f0;
+      border-radius:var(--radius-card);
+      padding:2.1rem;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .about-card h3{
+      font-size:1.5rem;
+      color:var(--primary-blue);
+      font-weight:950;
+      margin-bottom:.85rem;
+    }
+
+    .about-card p{
+      color:var(--text-muted);
+      font-weight:650;
+      line-height:1.65;
+      margin-bottom:1rem;
+    }
+
+    .about-list{
+      list-style:none;
+      display:grid;
+      gap:.6rem;
+      margin-top:.6rem;
+    }
+
+    .about-list li{
+      display:flex;
+      gap:.6rem;
+      align-items:flex-start;
+      color:#0f172a;
+      font-weight:800;
+    }
+
+    .about-list li svg{
+      width:18px;
+      height:18px;
+      color:var(--secondary-blue);
+      margin-top:2px;
+      flex-shrink:0;
+    }
+
+    .cred-cards{
+      display:grid;
+      gap:1rem;
+    }
+
+    .cred{
+      background:#fff;
+      border:1px solid #e2e8f0;
+      border-radius:var(--radius-card);
+      padding:1.35rem;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .cred strong{
+      display:block;
+      font-weight:950;
+      color:#0f172a;
+      margin-bottom:.2rem;
+    }
+
+    .cred span{
+      color:var(--text-muted);
+      font-weight:750;
+      font-size:.95rem;
+    }
+
+    .steps-section{
+      padding:6rem 0;
+      background:#f8fafc;
+    }
+
+    .steps-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:1.4rem;
+    }
+
+    .step-card{
+      background:#fff;
+      border:1px solid #e2e8f0;
+      border-radius:var(--radius-card);
+      padding:1.6rem;
+      box-shadow:var(--shadow-sm);
+      position:relative;
+    }
+
+    .step-number{
+      width:42px;
+      height:42px;
+      border-radius:999px;
+      background:var(--primary-blue);
+      color:#fff;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      margin-bottom:1rem;
+    }
+
+    .step-card h3{
+      color:#0f172a;
+      font-weight:900;
+      margin-bottom:.45rem;
+      font-size:1.08rem;
+    }
+
+    .step-card p{
+      color:var(--text-muted);
+      font-weight:650;
+      line-height:1.6;
+    }
+
+    .testimonials-section{
+      padding:6.2rem 0;
+      background:#fff;
+      text-align:center;
+    }
+
+    .testimonials-container{
+      max-width:920px;
+      margin:0 auto;
+      position:relative;
+      min-height:310px;
+    }
+
+    .testimonial-card{
+      position:absolute;
+      width:100%;
+      opacity:0;
+      visibility:hidden;
+      transition:opacity .28s ease, transform .28s ease;
+      background:#fff;
+      padding:2.4rem 2rem;
+      border-radius:var(--radius-card);
+      box-shadow:var(--shadow-md);
+      border:1px solid #e2e8f0;
+      text-align:left;
+      transform:translateY(8px);
+    }
+
+    .testimonial-card.active{
+      opacity:1;
+      visibility:visible;
+      position:relative;
+      transform:translateY(0);
+    }
+
+    .stars{
+      display:inline-flex;
+      gap:4px;
+      margin:.2rem 0 .8rem;
+      color:#f59e0b;
+      font-size:1.05rem;
+      font-weight:900;
+    }
+
+    .quote{
+      font-size:1.16rem;
+      font-style:italic;
+      color:#334155;
+      line-height:1.65;
+      margin-bottom:1.05rem;
+      font-weight:650;
+    }
+
+    .who{
+      font-weight:950;
+      color:var(--primary-blue);
+      font-size:.95rem;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+    }
+
+    .carousel-controls{
+      display:flex;
+      justify-content:center;
+      gap:1rem;
+      margin-top:2.2rem;
+    }
+
+    .control-btn{
+      background:#fff;
+      border:2px solid #e2e8f0;
+      color:var(--primary-blue);
+      width:54px;
+      height:54px;
+      border-radius:999px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease;
+      font-size:1.7rem;
+      font-weight:950;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .control-btn:hover{
+      border-color:var(--primary-blue);
+      background:var(--primary-blue);
+      color:#fff;
+      transform:scale(1.06);
+    }
+
+    .cta-final{
+      padding:6.8rem 0;
+      background:linear-gradient(135deg,var(--primary-blue),#1e3a8a);
+      color:#fff;
+      text-align:center;
+    }
+
+    .cta-final h2{
+      font-size:clamp(2rem,5vw,3rem);
+      margin-bottom:.85rem;
+      font-weight:950;
+    }
+
+    .pricing-note{
+      display:block;
+      margin-bottom:2.1rem;
+      font-size:1.05rem;
+      opacity:.92;
+      font-weight:750;
+      max-width:880px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .btn-wa-white{
+      background:#fff;
+      color:var(--whatsapp-dark);
+      box-shadow:0 14px 30px rgba(0,0,0,.22);
+      border:0;
+    }
+
+    .btn-wa-white:hover{
+      background:#f8fafc;
+      color:var(--whatsapp-green);
+      transform:translateY(-4px);
+    }
+
+    footer{
+      padding:3rem 0;
+      text-align:center;
+      color:#cbd5e1;
+      background:#0f172a;
+      font-size:.95rem;
+      border-top:1px solid rgba(255,255,255,.10);
+    }
+
+    .wa-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:9999;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:linear-gradient(135deg,var(--whatsapp-green),var(--whatsapp-dark));
+      color:#fff;
+      padding:.9rem 1.05rem;
+      border-radius:var(--radius-full);
+      box-shadow:0 18px 35px -18px rgba(37,211,102,.7);
+      font-weight:950;
+      border:1px solid rgba(255,255,255,.18);
+      transition:transform .2s ease,filter .2s ease;
+    }
+
+    .wa-float:hover{
+      transform:translateY(-3px);
+      filter:brightness(1.05);
+    }
+
+    .wa-float svg{
+      width:22px;
+      height:22px;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto !important;}
+      .btn-wa,.pillar-card,.method-card,.control-btn,.wa-float{transition:none !important;}
+      .testimonial-card{transition:none !important;}
+    }
+
+    @media (max-width:920px){
+      .about-grid{grid-template-columns:1fr;}
+      .about-left{grid-template-columns:1fr;text-align:left;}
+      .about-photo{margin:0 auto;}
+    }
+
+    @media (max-width:768px){
+      .stats-grid{grid-template-columns:1fr;gap:2rem;}
+      .hero{padding:5.4rem 0 3.2rem;}
+      .testimonial-card{padding:2rem 1.35rem;}
+      .wa-float span{display:none;}
+      .wa-float{padding:.95rem;}
+      .nav-inner{justify-content:center;}
+      .brand{justify-content:center;}
+      .hero-trust{gap:.6rem;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav" aria-label="Navegación">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand">
+          Tu Profe de Cabecera
+          <span class="brand-badge">Online</span>
+        </div>
+        <div class="nav-links">
+          <a href="#materias">Materias</a>
+          <a href="#metodologia">Metodología</a>
+          <a href="#testimonios">Opiniones</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="inicio">
+    <div class="container">
+      <h1>Clases Particulares Online para Bachillerato, FP y Universidad</h1>
+      <h2 class="subtitle">Matemáticas, Cálculo, Programación y Electrónica</h2>
+
+      <p class="tagline">
+        Si se te está haciendo cuesta arriba la asignatura, tienes examen cerca o necesitas entender los ejercicios de verdad,
+        te ayudo paso a paso con clases online, grabación y seguimiento.
+      </p>
+
+      <div class="hero-trust">
+        <div class="hero-pill">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+          </svg>
+          Clase grabada
+        </div>
+
+        <div class="hero-pill">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+          Material y ejercicios
+        </div>
+
+        <div class="hero-pill">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+          </svg>
+          Seguimiento por WhatsApp
+        </div>
+      </div>
+
+      <a id="waHero" href="#" target="_blank" rel="noopener noreferrer" class="btn-wa">
+        <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.626 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        Escribirme por WhatsApp
+      </a>
+
+      <p class="micro-note">
+        Escríbeme con tu <strong>asignatura, tema y nivel</strong>, y te digo si puedo ayudarte y cómo podríamos organizar la clase.
+      </p>
+    </div>
+  </header>
+
+  <section class="authority" id="experiencia">
+    <div class="container">
+      <div class="stats-grid">
+        <div>
+          <div class="stat-number" data-target="7">+0</div>
+          <div class="stat-text">Años enseñando online</div>
+        </div>
+        <div>
+          <div class="stat-number" data-target="400">+0</div>
+          <div class="stat-text">Alumnos acompañados</div>
+        </div>
+        <div>
+          <div class="stat-number" data-target="4500">+0</div>
+          <div class="stat-text">Horas impartidas</div>
+        </div>
+      </div>
+
+      <p class="micro-phrase">
+        Trabajo con práctica real y ejercicios tipo examen para que ganes seguridad en el momento clave.
+      </p>
+    </div>
+  </section>
+
+  <section class="fit-section" id="para-ti">
+    <div class="container">
+      <div class="section-header">
+        <h2>Estas clases pueden ayudarte si...</h2>
+        <p>
+          Están pensadas para alumnos que necesitan avanzar con claridad, preparar exámenes o reforzar una base que no quedó bien asentada.
+        </p>
+      </div>
+
+      <div class="fit-grid">
+        <div class="fit-card">
+          <strong>Te cuesta seguir la asignatura</strong>
+          <span>Y necesitas una explicación clara, ordenada y paso a paso.</span>
+        </div>
+
+        <div class="fit-card">
+          <strong>Tienes examen, parcial o entrega cerca</strong>
+          <span>Y quieres llegar con más seguridad y mejor preparación.</span>
+        </div>
+
+        <div class="fit-card">
+          <strong>Necesitas apoyo con ejercicios o prácticas</strong>
+          <span>Para entender cómo resolverlos y no quedarte bloqueado.</span>
+        </div>
+
+        <div class="fit-card">
+          <strong>Quieres entender de verdad la base</strong>
+          <span>No solo memorizar procedimientos sin saber qué estás haciendo.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars" id="materias">
+    <div class="container">
+      <div class="section-header">
+        <h2>Materias principales</h2>
+        <p>
+          Me centro en 3 pilares. Si tu asignatura se llama distinto en tu centro, me envías el temario y lo vemos igualmente.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <h3>Matemáticas y Cálculo</h3>
+          <div class="tag-container">
+            <span class="tag">Cálculo I y II (Análisis)</span>
+            <span class="tag">Álgebra</span>
+            <span class="tag">Lógica matemática</span>
+            <span class="tag">Probabilidad</span>
+            <span class="tag">Estadística</span>
+            <span class="tag">Matemática aplicada</span>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <h3>Programación</h3>
+          <div class="tag-container">
+            <span class="tag">C</span>
+            <span class="tag">C++</span>
+            <span class="tag">C#</span>
+            <span class="tag">Python</span>
+            <span class="tag">Algoritmos</span>
+            <span class="tag">Bases de datos (SQL)</span>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <h3>Electrónica</h3>
+          <div class="tag-container">
+            <span class="tag">Analógica</span>
+            <span class="tag">Digital</span>
+            <span class="tag">Electrotecnia</span>
+            <span class="tag">Circuitos</span>
+            <span class="tag">Robótica</span>
+            <span class="tag">Arduino</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works" id="metodologia">
+    <div class="container">
+      <div class="section-header">
+        <h2 style="color:#fff;">Cómo trabajamos</h2>
+        <p style="color:#cbd5e1;">La idea es que avances entre clases, no solo hacer una clase y ya está.</p>
+      </div>
+
+      <div class="method-grid">
+        <div class="method-card">
+          <div class="method-icon">
+            <svg width="24" height="24" fill="none" stroke="white" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h4>En vivo + grabación</h4>
+          <p>La clase se realiza online y la sesión queda grabada para que puedas repasar cuando quieras.</p>
+        </div>
+
+        <div class="method-card">
+          <div class="method-icon">
+            <svg width="24" height="24" fill="none" stroke="white" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <h4>Material + ejercicios</h4>
+          <p>Recibes PDFs, resoluciones y ejercicios adaptados a tu temario y a tu nivel.</p>
+        </div>
+
+        <div class="method-card">
+          <div class="method-icon">
+            <svg width="24" height="24" fill="none" stroke="white" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+            </svg>
+          </div>
+          <h4>Seguimiento por WhatsApp</h4>
+          <p>Si te bloqueas estudiando entre clases, puedes escribirme para resolver dudas puntuales y seguir avanzando.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-section" id="video">
+    <div class="container">
+      <div class="section-header">
+        <h2>Así se ve una clase</h2>
+      </div>
+
+      <div class="video-wrap">
+        <div class="video-header">
+          <strong>Demostración de clase</strong>
+        </div>
+
+        <div class="video-frame">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/jtRYTVcVqYc?si=zmtJg6iZXaLmHdCZ"
+            title="Video de demostración de clase"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="sobre-mi">
+    <div class="container">
+      <div class="section-header">
+        <h2>Sobre el profesor</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-left">
+          <div class="about-photo">
+            <img src="img/perfil.png" alt="Foto del profesor Denis Diaz">
+          </div>
+
+          <div class="about-card">
+            <h3>Tu Profe de Cabecera (Denis Diaz)</h3>
+            <p>
+              Soy el profesor detrás de <strong>Tu Profe de Cabecera</strong>. Me especializo en materias técnicas
+              (Matemáticas, Cálculo, Programación y Electrónica) para <strong>Bachillerato, FP y Universidad</strong>.
+            </p>
+
+            <ul class="about-list">
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Explico paso a paso y me aseguro de que todo quede claro.
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                Te doy material y ejercicios para reforzar entre clases.
+              </li>
+              <li>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+                </svg>
+                Acompaño por WhatsApp para resolver dudas puntuales.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cred-cards">
+          <div class="cred">
+            <strong>Técnico en Electrónica</strong>
+            <span>Base sólida para electrónica, circuitos y electrotecnia.</span>
+          </div>
+
+          <div class="cred">
+            <strong>Tecnicatura Superior en Análisis de Sistemas</strong>
+            <span>Formación en programación, algoritmos y bases de datos.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps-section" id="como-empezar">
+    <div class="container">
+      <div class="section-header">
+        <h2>Cómo empezar</h2>
+        <p>Un proceso simple para que puedas consultar, resolver dudas y coordinar sin complicaciones.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Escríbeme por WhatsApp</h3>
+          <p>Cuéntame qué asignatura cursas, tu nivel y el tema que necesitas trabajar.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Reviso tu caso</h3>
+          <p>Te digo si puedo ayudarte, cómo sería la clase y resolvemos cualquier duda que tengas.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Coordinamos horario</h3>
+          <p>Agendamos la sesión y empezamos a trabajar con una clase adaptada a tus necesidades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section" id="testimonios">
+    <div class="container">
+      <div class="section-header">
+        <h2>Opiniones de alumnos</h2>
+      </div>
+
+      <div class="testimonials-container">
+        <div id="testimonials-wrapper" aria-live="polite"></div>
+        <div class="carousel-controls">
+          <button id="prev-btn" class="control-btn" aria-label="Anterior">‹</button>
+          <button id="next-btn" class="control-btn" aria-label="Siguiente">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final" id="contacto">
+    <div class="container">
+      <h2>¿Te ayudo a avanzar desde hoy?</h2>
+      <span class="pricing-note">
+        Tarifas adaptadas según el nivel, la materia y la frecuencia de clases.
+        También puedo orientarte tanto si necesitas una clase puntual como si buscas acompañamiento semanal.
+      </span>
+
+      <a id="waCta" href="#" target="_blank" rel="noopener noreferrer" class="btn-wa btn-wa-white">
+        <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.626 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        Hablar por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Tu Profe de Cabecera — Clases técnicas online (Bachillerato, FP y Universidad)</p>
+    </div>
+  </footer>
+
+  <a id="waFloat" class="wa-float" href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.626 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <script>
+    const WA_LINK = "https://wa.me/543364034900?text=Hola%2C%20he%20visto%20tu%20web%20y%20quiero%20consultarte%20por%20clases.%20Mi%20asignatura%20es%3A%20___%20Mi%20nivel%20es%3A%20___%20Y%20necesito%20ayuda%20con%3A%20___";
+
+    const waHero = document.getElementById("waHero");
+    const waCta = document.getElementById("waCta");
+    const waFloat = document.getElementById("waFloat");
+
+    if (waHero) waHero.href = WA_LINK;
+    if (waCta) waCta.href = WA_LINK;
+    if (waFloat) waFloat.href = WA_LINK;
+
+    const animateCounters = () => {
+      const counters = document.querySelectorAll(".stat-number");
+      const speed = 140;
+
+      counters.forEach(counter => {
+        const target = Number(counter.getAttribute("data-target")) || 0;
+        let current = 0;
+
+        const step = () => {
+          const inc = Math.max(1, target / speed);
+          current = Math.min(target, Math.ceil(current + inc));
+          counter.textContent = "+" + current;
+          if (current < target) requestAnimationFrame(step);
+        };
+
+        requestAnimationFrame(step);
+      });
+    };
+
+    const statsSection = document.querySelector(".authority");
+
+    if ("IntersectionObserver" in window && statsSection) {
+      const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          animateCounters();
+          observer.disconnect();
+        }
+      }, { threshold: 0.25 });
+
+      observer.observe(statsSection);
+    } else {
+      animateCounters();
+    }
+
+    const testimonials = [
+      { text: "Pensé que Análisis era imposible. Con Denis entendí la lógica y aprobé con un 9. Además graba las clases y deja muchos ejercicios.", author: "Hernán — Análisis Matemático" },
+      { text: "No sabía SQL y en dos clases me ayudó a aprobar con un 8.", author: "Alexis — Bases de Datos (SQL)" },
+      { text: "Me ayudó con electrotecnia, muy paciente y claro. Encima envía la clase grabada para repasar.", author: "Massimo — Electrotecnia" },
+      { text: "Se asegura de que todo quede claro y me dio herramientas extra para preparar el examen. Muy recomendado.", author: "Tamara — Electrónica" },
+      { text: "Va paso a paso y explica cada detalle. Me aclaró todas las dudas con ejemplos.", author: "Mía — Matemática" },
+      { text: "Me explicó paso a paso un trabajo práctico y lo resolvimos juntos. Muy recomendado.", author: "Iván — Programación" },
+      { text: "Excelente predisposición, mi hija quedó muy conforme. La clase queda grabada, un genio.", author: "Claudia — Matemáticas" },
+      { text: "Mi hija es tímida y con Denis se anima a preguntar. Es claro y gracias a él mejoró mucho en el colegio.", author: "Juliana — Bachillerato" }
+    ];
+
+    const wrapper = document.getElementById("testimonials-wrapper");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+
+    let idx = 0;
+    const cards = [];
+
+    function stars() {
+      return "★★★★★";
+    }
+
+    function buildCards() {
+      if (!wrapper) return;
+
+      const frag = document.createDocumentFragment();
+
+      testimonials.forEach((t, i) => {
+        const card = document.createElement("div");
+        card.className = "testimonial-card";
+        card.setAttribute("data-index", String(i));
+        card.innerHTML = `
+          <div class="stars" aria-label="5 estrellas">${stars()}</div>
+          <div class="quote">"${t.text}"</div>
+          <div class="who">${t.author}</div>
+        `;
+        cards.push(card);
+        frag.appendChild(card);
+      });
+
+      wrapper.appendChild(frag);
+      setActive(0);
+    }
+
+    function setActive(newIdx) {
+      if (!cards.length) return;
+      cards[idx]?.classList.remove("active");
+      idx = newIdx;
+      cards[idx]?.classList.add("active");
+    }
+
+    function prev() {
+      setActive((idx - 1 + cards.length) % cards.length);
+    }
+
+    function next() {
+      setActive((idx + 1) % cards.length);
+    }
+
+    if (prevBtn) prevBtn.addEventListener("click", prev);
+    if (nextBtn) nextBtn.addEventListener("click", next);
+
+    buildCards();
+
+    if (cards.length > 0) {
+      setInterval(next, 10000);
+    }
+  </script>
+</body>
+</html>
