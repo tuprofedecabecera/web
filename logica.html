@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curso de Lógica de Programación con PSeInt desde cero. Aprendé a pensar como programador con clases prácticas, material descargable y soporte por WhatsApp.">
+    <title>Lógica de Programación con PSeInt desde Cero | Tu Profe de Cabecera</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass {
+            background: rgba(255,255,255,.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+        .accordion-content {
+            transition: max-height .3s ease, opacity .25s ease;
+        }
+        .hero-grid {
+            background-image: linear-gradient(to right, rgba(148,163,184,.08) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(148,163,184,.08) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        #btnVolverArriba { display:none; }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- =========================================================
+         NAVBAR
+         Para otros cursos: cambiar solamente título/logo/link de compra.
+         ========================================================= -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-200/80">
+        <div class="max-w-6xl mx-auto px-5 lg:px-6 h-20 flex items-center justify-between gap-4">
+            <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="Volver a clases online en vivo">
+                <img src="img/logo.png" alt="Tu Profe de Cabecera" class="h-11 w-auto object-contain">
+                <div class="hidden sm:block leading-tight">
+                    <div class="font-extrabold text-sm tracking-tight text-slate-950">TU PROFE DE CABECERA</div>
+                    <div class="text-[10px] uppercase tracking-[.18em] font-bold text-slate-400 mt-1">Cursos online</div>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600">
+                <a href="#aprendizaje" class="hover:text-blue-600 transition">Qué vas a aprender</a>
+                <a href="#temario" class="hover:text-blue-600 transition">Temario</a>
+                <a href="#incluye" class="hover:text-blue-600 transition">Incluye</a>
+                <a href="#faq" class="hover:text-blue-600 transition">FAQ</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 text-sm font-bold hover:border-slate-300 hover:bg-slate-50 transition">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    Clases en vivo
+                </a>
+                <a href="https://wa.me/5493364034900?text=Hola%20Denis.%20Vi%20la%20informaci%C3%B3n%20del%20curso%20de%20L%C3%B3gica%20de%20Programaci%C3%B3n%20con%20PSeInt%20en%20tu%20p%C3%A1gina%20web%20y%20me%20interesa.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20curso%20y%20el%20proceso%20de%20inscripci%C3%B3n." class="inline-flex items-center gap-2 bg-blue-600 text-white px-4 sm:px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-blue-700 transition shadow-sm">
+                    <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Comprar curso</span>
+                    <span class="sm:hidden">Comprar</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+
+        <!-- =========================================================
+             HERO
+             ========================================================= -->
+        <section id="inicio" class="relative overflow-hidden bg-white border-b border-slate-100">
+            <div class="absolute inset-0 hero-grid pointer-events-none"></div>
+            <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl pointer-events-none"></div>
+
+            <div class="relative max-w-6xl mx-auto px-5 lg:px-6 py-12 md:py-20">
+                <div class="grid lg:grid-cols-[1.05fr_.95fr] items-center gap-10 lg:gap-16">
+                    <div>
+                        <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 rounded-full px-3.5 py-2 text-xs font-extrabold uppercase tracking-wide mb-5">
+                            <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                            Curso online · Desde cero
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.05] text-slate-950">
+                            Lógica de Programación
+                            <span class="block text-blue-600">con PSeInt desde Cero</span>
+                        </h1>
+
+                        <p class="mt-6 text-lg md:text-xl leading-relaxed text-slate-600 max-w-2xl">
+                            Aprendé a resolver problemas, crear algoritmos y desarrollar el pensamiento lógico que necesitás antes de dar el salto a cualquier lenguaje de programación.
+                        </p>
+
+                        <div class="flex flex-wrap gap-x-5 gap-y-3 mt-6 text-sm font-semibold text-slate-600">
+                            <span class="inline-flex items-center gap-2"><i data-lucide="video" class="w-4 h-4 text-blue-600"></i>Más de 35 clases</span>
+                            <span class="inline-flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-blue-600"></i>Menos de 10 horas</span>
+                            <span class="inline-flex items-center gap-2"><i data-lucide="infinity" class="w-4 h-4 text-blue-600"></i>Acceso permanente</span>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3 mt-8">
+                            <a href="https://wa.me/5493364034900?text=Hola%20Denis.%20Vi%20la%20informaci%C3%B3n%20del%20curso%20de%20L%C3%B3gica%20de%20Programaci%C3%B3n%20con%20PSeInt%20en%20tu%20p%C3%A1gina%20web%20y%20me%20interesa.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20curso%20y%20el%20proceso%20de%20inscripci%C3%B3n." class="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-7 py-4 rounded-xl font-extrabold hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">
+                                <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                                Comprar curso
+                            </a>
+                            <a href="#temario" class="inline-flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-7 py-4 rounded-xl font-bold hover:bg-slate-50 hover:border-slate-300 transition">
+                                Ver temario
+                                <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-blue-500/10 blur-3xl rounded-full"></div>
+                        <div class="relative bg-white p-3 rounded-3xl border border-slate-200 shadow-2xl shadow-slate-900/10">
+                            <img src="img/hero.png" alt="Curso de Lógica de Programación con PSeInt" class="w-full rounded-2xl object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO -->
+        <section class="bg-white border-b border-slate-100">
+            <div class="max-w-5xl mx-auto px-5 lg:px-6 py-12 md:py-16">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="text-xs font-extrabold uppercase tracking-[.18em] text-blue-600">Conocé el curso</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-slate-950 mt-2">Mirá de qué se trata</h2>
+                    <p class="text-slate-600 mt-3">Una presentación rápida para que conozcas el contenido y la metodología.</p>
+                </div>
+                <div class="aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden bg-slate-950 shadow-xl border border-slate-200">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/1bg3C2HCZEg?controls=1" title="Presentación del curso de Lógica de Programación con PSeInt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             WHAT YOU LEARN
+             ========================================================= -->
+        <section id="aprendizaje" class="py-14 md:py-18">
+            <div class="max-w-6xl mx-auto px-5 lg:px-6">
+                <div class="max-w-2xl mb-9">
+                    <span class="text-xs font-extrabold uppercase tracking-[.18em] text-blue-600">Objetivo del curso</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-slate-950 mt-2">¿Qué vas a aprender?</h2>
+                    <p class="text-slate-600 mt-3">Todo lo necesario para construir una base sólida de lógica de programación desde cero.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                        <i data-lucide="variable" class="w-6 h-6 text-blue-600 mb-4"></i>
+                        <h3 class="font-extrabold text-slate-950">Variables y datos</h3>
+                        <p class="text-sm text-slate-600 mt-2">Aprendé a guardar, pedir y utilizar información dentro de un programa.</p>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                        <i data-lucide="git-branch" class="w-6 h-6 text-blue-600 mb-4"></i>
+                        <h3 class="font-extrabold text-slate-950">Condicionales</h3>
+                        <p class="text-sm text-slate-600 mt-2">Tomá decisiones con condiciones, operadores lógicos y menús.</p>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                        <i data-lucide="repeat" class="w-6 h-6 text-blue-600 mb-4"></i>
+                        <h3 class="font-extrabold text-slate-950">Bucles</h3>
+                        <p class="text-sm text-slate-600 mt-2">Repetí tareas de forma ordenada usando las estructuras adecuadas.</p>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                        <i data-lucide="table-2" class="w-6 h-6 text-blue-600 mb-4"></i>
+                        <h3 class="font-extrabold text-slate-950">Vectores y matrices</h3>
+                        <p class="text-sm text-slate-600 mt-2">Guardá y procesá listas y tablas de datos.</p>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                        <i data-lucide="search" class="w-6 h-6 text-blue-600 mb-4"></i>
+                        <h3 class="font-extrabold text-slate-950">Resolución de problemas</h3>
+                        <p class="text-sm text-slate-600 mt-2">Aprendé a descomponer problemas y convertirlos en algoritmos.</p>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                        <i data-lucide="blocks" class="w-6 h-6 text-blue-600 mb-4"></i>
+                        <h3 class="font-extrabold text-slate-950">Subprocesos</h3>
+                        <p class="text-sm text-slate-600 mt-2">Organizá programas grandes en partes reutilizables y fáciles de entender.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             INCLUDES
+             ========================================================= -->
+        <section id="incluye" class="py-14 md:py-18 bg-white border-y border-slate-100">
+            <div class="max-w-6xl mx-auto px-5 lg:px-6">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-xs font-extrabold uppercase tracking-[.18em] text-blue-600">Tu acceso incluye</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-slate-950 mt-2">Todo lo que recibís</h2>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="flex gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                        <div class="w-11 h-11 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0"><i data-lucide="video" class="w-5 h-5"></i></div>
+                        <div><h3 class="font-extrabold text-slate-950">Curso completo en video</h3><p class="text-sm text-slate-600 mt-1">Más de 35 clases y menos de 10 horas de contenido.</p></div>
+                    </div>
+                    <div class="flex gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                        <div class="w-11 h-11 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0"><i data-lucide="file-text" class="w-5 h-5"></i></div>
+                        <div><h3 class="font-extrabold text-slate-950">Material de estudio</h3><p class="text-sm text-slate-600 mt-1">Apuntes y material visual en PDF para repasar.</p></div>
+                    </div>
+                    <div class="flex gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                        <div class="w-11 h-11 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0"><i data-lucide="pencil-line" class="w-5 h-5"></i></div>
+                        <div><h3 class="font-extrabold text-slate-950">Ejercicios prácticos</h3><p class="text-sm text-slate-600 mt-1">Actividades para afianzar lo aprendido en cada módulo.</p></div>
+                    </div>
+                    <div class="flex gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                        <div class="w-11 h-11 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0"><i data-lucide="check-check" class="w-5 h-5"></i></div>
+                        <div><h3 class="font-extrabold text-slate-950">Soluciones paso a paso</h3><p class="text-sm text-slate-600 mt-1">Código resuelto para comparar y entender tus resultados.</p></div>
+                    </div>
+                    <div class="flex gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                        <div class="w-11 h-11 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0"><i data-lucide="infinity" class="w-5 h-5"></i></div>
+                        <div><h3 class="font-extrabold text-slate-950">Acceso permanente</h3><p class="text-sm text-slate-600 mt-1">Podés volver al contenido cuando quieras, incluyendo futuras actualizaciones.</p></div>
+                    </div>
+                    <div class="flex gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200">
+                        <div class="w-11 h-11 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0"><i data-lucide="message-circle" class="w-5 h-5"></i></div>
+                        <div><h3 class="font-extrabold text-slate-950">Soporte por WhatsApp</h3><p class="text-sm text-slate-600 mt-1">Si te trabás, podés escribirme para recibir orientación.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             SYLLABUS
+             ========================================================= -->
+        <section id="temario" class="py-14 md:py-18">
+            <div class="max-w-4xl mx-auto px-5 lg:px-6">
+                <div class="text-center max-w-2xl mx-auto mb-9">
+                    <span class="text-xs font-extrabold uppercase tracking-[.18em] text-blue-600">Contenido</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-slate-950 mt-2">Temario del curso</h2>
+                    <p class="text-slate-600 mt-3">Cinco módulos progresivos para aprender desde los fundamentos hasta la organización de programas.</p>
+                </div>
+
+                <div class="space-y-3">
+                    <!-- Module 1 -->
+                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                        <button type="button" class="w-full px-5 py-5 flex items-center justify-between gap-4 text-left" onclick="toggleAccordion(1)" aria-expanded="false">
+                            <div class="flex items-center gap-4 min-w-0">
+                                <span class="w-11 h-11 rounded-xl bg-blue-50 text-blue-700 font-black flex items-center justify-center shrink-0">01</span>
+                                <div><h3 class="font-extrabold text-slate-950">Fundamentos y primeros pasos</h3><p class="text-sm text-slate-500 mt-1">7 clases · Variables, entrada, salida y operaciones</p></div>
+                            </div>
+                            <i data-lucide="chevron-down" id="arrow-1" class="w-5 h-5 text-slate-400 shrink-0 transition-transform"></i>
+                        </button>
+                        <div id="content-1" class="accordion-content max-h-0 overflow-hidden opacity-0 bg-slate-50">
+                            <div class="px-5 pb-5 pt-1 border-t border-slate-100 grid sm:grid-cols-2 gap-2 text-sm text-slate-600">
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 1: Bienvenida + instalación de PSeInt</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 2: Primer programa y mensajes</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 3: Variables</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 4: Entrada de datos</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 5: Operaciones matemáticas</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 6: Resolución ordenada de ejercicios</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200 sm:col-span-2 font-semibold text-blue-700">Clase 7: Integrador: notas y descuentos</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 2 -->
+                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                        <button type="button" class="w-full px-5 py-5 flex items-center justify-between gap-4 text-left" onclick="toggleAccordion(2)" aria-expanded="false">
+                            <div class="flex items-center gap-4 min-w-0">
+                                <span class="w-11 h-11 rounded-xl bg-blue-50 text-blue-700 font-black flex items-center justify-center shrink-0">02</span>
+                                <div><h3 class="font-extrabold text-slate-950">Tomar decisiones</h3><p class="text-sm text-slate-500 mt-1">6 clases · Condiciones, operadores lógicos y menús</p></div>
+                            </div>
+                            <i data-lucide="chevron-down" id="arrow-2" class="w-5 h-5 text-slate-400 shrink-0 transition-transform"></i>
+                        </button>
+                        <div id="content-2" class="accordion-content max-h-0 overflow-hidden opacity-0 bg-slate-50">
+                            <div class="px-5 pb-5 pt-1 border-t border-slate-100 grid sm:grid-cols-2 gap-2 text-sm text-slate-600">
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 8: Condiciones verdaderas y falsas</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 9: Si-Sino</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 10: Decisiones anidadas</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 11: Y, O y NO</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 12: Menús interactivos</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200 font-semibold text-blue-700">Clase 13: Integrador: cajero automatizado</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 3 -->
+                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                        <button type="button" class="w-full px-5 py-5 flex items-center justify-between gap-4 text-left" onclick="toggleAccordion(3)" aria-expanded="false">
+                            <div class="flex items-center gap-4 min-w-0">
+                                <span class="w-11 h-11 rounded-xl bg-blue-50 text-blue-700 font-black flex items-center justify-center shrink-0">03</span>
+                                <div><h3 class="font-extrabold text-slate-950">Repetir tareas automáticamente</h3><p class="text-sm text-slate-500 mt-1">5 clases · Bucles y repeticiones</p></div>
+                            </div>
+                            <i data-lucide="chevron-down" id="arrow-3" class="w-5 h-5 text-slate-400 shrink-0 transition-transform"></i>
+                        </button>
+                        <div id="content-3" class="accordion-content max-h-0 overflow-hidden opacity-0 bg-slate-50">
+                            <div class="px-5 pb-5 pt-1 border-t border-slate-100 grid sm:grid-cols-2 gap-2 text-sm text-slate-600">
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 14: Mientras</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 15: Repetir</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 16: Para</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 17: Bucles dentro de bucles</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200 sm:col-span-2 font-semibold text-blue-700">Clase 18: Integrador: procesar notas de un aula</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 4 -->
+                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                        <button type="button" class="w-full px-5 py-5 flex items-center justify-between gap-4 text-left" onclick="toggleAccordion(4)" aria-expanded="false">
+                            <div class="flex items-center gap-4 min-w-0">
+                                <span class="w-11 h-11 rounded-xl bg-blue-50 text-blue-700 font-black flex items-center justify-center shrink-0">04</span>
+                                <div><h3 class="font-extrabold text-slate-950">Guardar listas de datos</h3><p class="text-sm text-slate-500 mt-1">11 clases · Vectores, matrices, búsquedas y ordenamiento</p></div>
+                            </div>
+                            <i data-lucide="chevron-down" id="arrow-4" class="w-5 h-5 text-slate-400 shrink-0 transition-transform"></i>
+                        </button>
+                        <div id="content-4" class="accordion-content max-h-0 overflow-hidden opacity-0 bg-slate-50">
+                            <div class="px-5 pb-5 pt-1 border-t border-slate-100 grid sm:grid-cols-2 gap-2 text-sm text-slate-600">
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 19: Vectores</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 20: Cargar y mostrar listas</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 21: Máximos y mínimos</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 22: Búsquedas</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 23: Método Selección</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 24: Método Burbuja</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 25: Matrices</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200 font-semibold text-blue-700">Clase 26 a 29: Sistemas integradores de notas</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 5 -->
+                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                        <button type="button" class="w-full px-5 py-5 flex items-center justify-between gap-4 text-left" onclick="toggleAccordion(5)" aria-expanded="false">
+                            <div class="flex items-center gap-4 min-w-0">
+                                <span class="w-11 h-11 rounded-xl bg-blue-50 text-blue-700 font-black flex items-center justify-center shrink-0">05</span>
+                                <div><h3 class="font-extrabold text-slate-950">Organizar mejor tus programas</h3><p class="text-sm text-slate-500 mt-1">8 clases · Subprocesos, modularización e integradores</p></div>
+                            </div>
+                            <i data-lucide="chevron-down" id="arrow-5" class="w-5 h-5 text-slate-400 shrink-0 transition-transform"></i>
+                        </button>
+                        <div id="content-5" class="accordion-content max-h-0 overflow-hidden opacity-0 bg-slate-50">
+                            <div class="px-5 pb-5 pt-1 border-t border-slate-100 grid sm:grid-cols-2 gap-2 text-sm text-slate-600">
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 30: Modularizar programas</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 31: Enviar información a subprocesos</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200">Clase 32: Devolver respuestas y cálculos</div>
+                                <div class="p-3 bg-white rounded-xl border border-slate-200 font-semibold text-blue-700">Clase 33 a 35: Integrador completo</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOR WHOM + PSEINT -->
+        <section class="py-14 md:py-18 bg-white border-y border-slate-100">
+            <div class="max-w-6xl mx-auto px-5 lg:px-6 grid lg:grid-cols-2 gap-8">
+                <div class="rounded-3xl bg-slate-950 text-white p-7 md:p-9">
+                    <span class="text-xs font-extrabold uppercase tracking-[.18em] text-blue-400">¿Es para vos?</span>
+                    <h2 class="text-2xl md:text-3xl font-black mt-2">Ideal si...</h2>
+                    <ul class="mt-6 space-y-4 text-sm md:text-base text-slate-300">
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0"></i><span>Nunca programaste y querés empezar desde cero.</span></li>
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0"></i><span>Querés construir una base sólida antes de aprender otro lenguaje.</span></li>
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0"></i><span>Vas a cursar Introducción a la Programación o Sistemas en UTN o una carrera similar.</span></li>
+                    </ul>
+                </div>
+
+                <div class="rounded-3xl bg-slate-50 border border-slate-200 p-7 md:p-9">
+                    <span class="text-xs font-extrabold uppercase tracking-[.18em] text-blue-600">La herramienta</span>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-950 mt-2">¿Por qué usamos PSeInt?</h2>
+                    <p class="text-slate-600 leading-relaxed mt-4">PSeInt permite practicar lógica y resolución de problemas en español, sin empezar con las reglas técnicas de un lenguaje de programación más complejo.</p>
+                    <img src="img/logo_pseint.png" alt="PSeInt" class="mt-6 h-14 w-auto object-contain object-left">
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTRUCTOR -->
+        <section id="profesor" class="py-14 md:py-18">
+            <div class="max-w-4xl mx-auto px-5 lg:px-6">
+                <div class="bg-white border border-slate-200 rounded-3xl p-7 md:p-9 flex flex-col md:flex-row items-center md:items-start gap-7 shadow-sm">
+                    <img src="img/perfil.png" alt="Denis L Diaz - Tu Profe de Cabecera" class="w-28 h-28 rounded-full object-cover border-4 border-slate-100 shrink-0">
+                    <div class="text-center md:text-left">
+                        <span class="text-xs font-extrabold uppercase tracking-[.18em] text-blue-600">Tu instructor</span>
+                        <h2 class="text-2xl md:text-3xl font-black text-slate-950 mt-2">Denis L Diaz</h2>
+                        <p class="text-slate-600 leading-relaxed mt-4">Técnico Electrónico y Analista de Sistemas. Después de enseñar a numerosos estudiantes, desarrollé este curso buscando explicar los conceptos de programación de forma clara, visual y práctica.</p>
+                        <p class="text-slate-600 leading-relaxed mt-3">La metodología utiliza analogías, ejemplos cotidianos y ejercicios para que puedas comprender la lógica antes de enfrentarte a lenguajes más complejos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS: kept compact -->
+        <section id="testimonios" class="py-14 md:py-18 bg-white border-y border-slate-100">
+            <div class="max-w-6xl mx-auto px-5 lg:px-6">
+                <div class="text-center max-w-2xl mx-auto mb-9">
+                    <span class="text-xs font-extrabold uppercase tracking-[.18em] text-blue-600">Experiencias</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-slate-950 mt-2">Lo que dicen mis alumnos</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+                        <div class="flex gap-1 text-amber-400 mb-4">★★★★★</div>
+                        <p class="text-sm leading-relaxed text-slate-700 italic">“Este curso de lógica me ordenó la mente y me ayudó a entender por qué me costaba tanto aprender programación.”</p>
+                        <p class="font-bold text-slate-950 text-sm mt-5">Juan Pérez · Ingresante UTN</p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+                        <div class="flex gap-1 text-amber-400 mb-4">★★★★★</div>
+                        <p class="text-sm leading-relaxed text-slate-700 italic">“Nunca había escrito una línea de código. La explicación es clara y sin tecnicismos innecesarios.”</p>
+                        <p class="font-bold text-slate-950 text-sm mt-5">María González · Principiante</p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+                        <div class="flex gap-1 text-amber-400 mb-4">★★★★★</div>
+                        <p class="text-sm leading-relaxed text-slate-700 italic">“Los apuntes y ejercicios ayudan muchísimo para practicar y repasar después de cada clase.”</p>
+                        <p class="font-bold text-slate-950 text-sm mt-5">Sofía Fernández · Estudiante</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="py-14 md:py-18">
+            <div class="max-w-3xl mx-auto px-5 lg:px-6">
+                <div class="text-center mb-9">
+                    <span class="text-xs font-extrabold uppercase tracking-[.18em] text-blue-600">Preguntas frecuentes</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-slate-950 mt-2">Antes de comprar</h2>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden">
+                        <button type="button" class="w-full px-5 py-5 flex justify-between items-center text-left font-bold text-slate-950" onclick="toggleAccordion('faq1')" aria-expanded="false">¿Necesito conocimientos previos?<i data-lucide="chevron-down" id="arrow-faq1" class="w-5 h-5 text-slate-400 transition-transform"></i></button>
+                        <div id="content-faq1" class="accordion-content max-h-0 overflow-hidden opacity-0 bg-slate-50 border-t border-slate-100"><p class="px-5 py-4 text-sm leading-relaxed text-slate-600">No. El curso comienza desde cero y está pensado para personas que nunca programaron.</p></div>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden">
+                        <button type="button" class="w-full px-5 py-5 flex justify-between items-center text-left font-bold text-slate-950" onclick="toggleAccordion('faq2')" aria-expanded="false">¿Necesito saber matemáticas?<i data-lucide="chevron-down" id="arrow-faq2" class="w-5 h-5 text-slate-400 transition-transform"></i></button>
+                        <div id="content-faq2" class="accordion-content max-h-0 overflow-hidden opacity-0 bg-slate-50 border-t border-slate-100"><p class="px-5 py-4 text-sm leading-relaxed text-slate-600">Solo conocimientos matemáticos básicos. No se requiere matemática avanzada.</p></div>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden">
+                        <button type="button" class="w-full px-5 py-5 flex justify-between items-center text-left font-bold text-slate-950" onclick="toggleAccordion('faq3')" aria-expanded="false">¿Cuánto dura el curso?<i data-lucide="chevron-down" id="arrow-faq3" class="w-5 h-5 text-slate-400 transition-transform"></i></button>
+                        <div id="content-faq3" class="accordion-content max-h-0 overflow-hidden opacity-0 bg-slate-50 border-t border-slate-100"><p class="px-5 py-4 text-sm leading-relaxed text-slate-600">Tiene menos de 10 horas de video y está pensado para completarse aproximadamente en 3 a 5 semanas estudiando a tu propio ritmo.</p></div>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden">
+                        <button type="button" class="w-full px-5 py-5 flex justify-between items-center text-left font-bold text-slate-950" onclick="toggleAccordion('faq4')" aria-expanded="false">¿Cuánto tiempo tengo acceso?<i data-lucide="chevron-down" id="arrow-faq4" class="w-5 h-5 text-slate-400 transition-transform"></i></button>
+                        <div id="content-faq4" class="accordion-content max-h-0 overflow-hidden opacity-0 bg-slate-50 border-t border-slate-100"><p class="px-5 py-4 text-sm leading-relaxed text-slate-600">El acceso es permanente e ilimitado, incluyendo futuras actualizaciones del curso.</p></div>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden">
+                        <button type="button" class="w-full px-5 py-5 flex justify-between items-center text-left font-bold text-slate-950" onclick="toggleAccordion('faq5')" aria-expanded="false">¿Qué pasa si tengo dudas?<i data-lucide="chevron-down" id="arrow-faq5" class="w-5 h-5 text-slate-400 transition-transform"></i></button>
+                        <div id="content-faq5" class="accordion-content max-h-0 overflow-hidden opacity-0 bg-slate-50 border-t border-slate-100"><p class="px-5 py-4 text-sm leading-relaxed text-slate-600">Podés comunicarte conmigo por WhatsApp para recibir ayuda y orientación durante el aprendizaje.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             FINAL CTA / PRICE
+             ========================================================= -->
+        <section id="comprar" class="py-14 md:py-18 px-5 lg:px-6">
+            <div class="max-w-5xl mx-auto rounded-3xl bg-slate-950 text-white overflow-hidden shadow-2xl">
+                <div class="grid md:grid-cols-[1fr_auto] items-center gap-8 p-7 md:p-10 lg:p-12">
+                    <div>
+                        <span class="text-xs font-extrabold uppercase tracking-[.18em] text-blue-400">Empezá hoy</span>
+                        <h2 class="text-3xl md:text-4xl font-black mt-2">¿Listo para aprender lógica de programación?</h2>
+                        <p class="text-slate-300 mt-4 max-w-2xl leading-relaxed">Accedé al curso, estudiá a tu ritmo y construí una base que después puedas aplicar a Python, Java, JavaScript u otros lenguajes.</p>
+                        <div class="flex flex-wrap gap-4 mt-6 text-sm text-slate-300">
+                            <span class="inline-flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>Acceso permanente</span>
+                            <span class="inline-flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>Material descargable</span>
+                            <span class="inline-flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>Soporte por WhatsApp</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white text-slate-950 rounded-2xl p-6 w-full md:w-72 text-center border border-white/10">
+                        <span class="text-xs uppercase tracking-widest font-extrabold text-slate-400">Pago único</span>
+                        <div class="flex items-center justify-center gap-2 mt-2">
+                            <span class="text-lg text-slate-400 line-through">$29.900</span>
+                        </div>
+                        <div class="text-4xl font-black mt-1">$14.900</div>
+                        <p class="text-xs text-slate-500 mt-2">Precio mostrado actualmente en la página.</p>
+                        <a href="https://wa.me/5493364034900?text=Hola%20Denis.%20Vi%20la%20informaci%C3%B3n%20del%20curso%20de%20L%C3%B3gica%20de%20Programaci%C3%B3n%20con%20PSeInt%20en%20tu%20p%C3%A1gina%20web%20y%20me%20interesa.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20curso%20y%20el%20proceso%20de%20inscripci%C3%B3n." class="mt-5 w-full inline-flex items-center justify-center gap-2 bg-blue-600 text-white font-extrabold py-3.5 px-5 rounded-xl hover:bg-blue-700 transition">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            Comprar curso
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-200 bg-white">
+        <div class="max-w-6xl mx-auto px-5 lg:px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-5">
+            <div class="flex items-center gap-3">
+                <img src="img/logo.png" alt="Tu Profe de Cabecera" class="h-9 w-auto">
+                <div class="leading-tight">
+                    <div class="font-extrabold text-sm text-slate-950">TU PROFE DE CABECERA</div>
+                    <div class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Clases y Cursos Online</div>
+                </div>
+            </div>
+            <a href="index.html" class="inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-blue-600 transition">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                Volver a clases online en vivo
+            </a>
+            <p class="text-xs text-slate-400">© 2026 Tu Profe de Cabecera</p>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button id="btnVolverArriba" aria-label="Volver arriba" class="fixed bottom-5 right-5 w-11 h-11 rounded-full bg-blue-600 text-white shadow-lg items-center justify-center hover:bg-blue-700 transition z-40">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <script>
+        lucide.createIcons();
+
+        function toggleAccordion(id) {
+            const content = document.getElementById(`content-${id}`);
+            const arrow = document.getElementById(`arrow-${id}`);
+            if (!content || !arrow) return;
+
+            const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+            document.querySelectorAll('.accordion-content').forEach(el => {
+                el.style.maxHeight = null;
+                el.style.opacity = '0';
+            });
+            document.querySelectorAll('[id^="arrow-"]').forEach(el => el.classList.remove('rotate-180'));
+            document.querySelectorAll('[aria-expanded="true"]').forEach(el => el.setAttribute('aria-expanded', 'false'));
+
+            if (!isOpen) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.opacity = '1';
+                arrow.classList.add('rotate-180');
+                const button = content.previousElementSibling;
+                if (button) button.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        const btnTop = document.getElementById('btnVolverArriba');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 350) {
+                btnTop.style.display = 'flex';
+            } else {
+                btnTop.style.display = 'none';
+            }
+        });
+        btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
+</body>
+</html>
